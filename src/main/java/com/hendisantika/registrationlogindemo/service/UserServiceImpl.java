@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private RoleRepository roleRepository;
-    
+
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
