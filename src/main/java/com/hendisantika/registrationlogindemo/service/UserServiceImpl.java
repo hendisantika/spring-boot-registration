@@ -3,10 +3,9 @@ package com.hendisantika.registrationlogindemo.service;
 import com.hendisantika.registrationlogindemo.repository.RoleRepository;
 import com.hendisantika.registrationlogindemo.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
+import com.hendisantika.registrationlogindemo.model.User;
 import java.util.HashSet;
 
 /**

@@ -1,6 +1,7 @@
 package com.hendisantika.registrationlogindemo.service;
 
-import org.springframework.security.core.userdetails.User;
+
+import com.hendisantika.registrationlogindemo.model.User;
 
 /**
  * Created by IntelliJ IDEA.
