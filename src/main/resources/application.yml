@@ -3,5 +3,15 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
+    generate-ddl: true
   messages:
    basename: validation
+  thymeleaf:
+    cache: false
+    prefix: file:./src/main/resources/templates/
+    check-template: true
+    suffix: .html
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    content-type: text/html
+
