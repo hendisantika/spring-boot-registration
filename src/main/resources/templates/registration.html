@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,8 +10,8 @@
 
     <title>Create an account</title>
 
-    <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/common.css}">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -24,37 +24,54 @@
 
 <div class="container">
 
-    <form:form method="POST" modelAttribute="userForm" class="form-signin">
+    <form class="form-signin" method="POST" modelAttribute="userForm">
         <h2 class="form-signin-heading">Create your account</h2>
-        <spring:bind path="username">
-            <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="username" class="form-control" placeholder="Username"
-                            autofocus="true"></form:input>
-                <form:errors path="username"></form:errors>
-            </div>
-        </spring:bind>
+        <div class="form-group ${status.error ? 'has-error' : ''}">
+            <input autofocus="true" class="form-control" name="username" path="username" placeholder="Username"
+                   type="text"/>
+        </div>
 
-        <spring:bind path="password">
-            <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="password" path="password" class="form-control" placeholder="Password"></form:input>
-                <form:errors path="password"></form:errors>
-            </div>
-        </spring:bind>
+        <div class="form-group ${status.error ? 'has-error' : ''}">
+            <input class="form-control" name="password" path="password" placeholder="Password" type="password"/>
+        </div>
 
-        <spring:bind path="passwordConfirm">
-            <div class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="password" path="passwordConfirm" class="form-control"
-                            placeholder="Confirm your password"></form:input>
-                <form:errors path="passwordConfirm"></form:errors>
-            </div>
-        </spring:bind>
+        <div class="form-group ${status.error ? 'has-error' : ''}">
+            <input class="form-control" path="passwordConfirm" placeholder="Confirm your password"
+                   type="password"/>
+        </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-    </form:form>
+    </form>
 
-</div>
-<!-- /container -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
+    <h1>Pendaftaran</h1>
+    Waktu saat ini : <span th:text="${waktu}">Coba</span>
+
+    <form method="post">
+        <div class="form-group">
+            <label for="inputNama">Nama Lengkap</label>
+            <input class="form-control is-invalid"
+                   id="inputNama"
+                   name="username"
+                   type="text">
+            <div class="invalid-feedback">
+                Nama harus diisi
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Email</label>
+            <input class="form-control" id="password"
+                   name="password"
+                   type="password">
+            <div class="invalid-feedback">
+                Format email salah
+            </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    <!-- /container -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 </body>
 </html>
