@@ -26,6 +26,7 @@
 
     <form class="form-signin" method="POST" modelAttribute="userForm">
         <h2 class="form-signin-heading">Create your account</h2>
+        Waktu saat ini : <span th:text="${#temporals.format(waktu, 'dd-MM-yyyy HH:mm')}">Coba</span>
         <div class="form-group ${status.error ? 'has-error' : ''}">
             <input autofocus="true" class="form-control" name="username" path="username" placeholder="Username"
                    type="text"/>
@@ -41,35 +42,6 @@
         </div>
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
-    </form>
-
-    <h1>Pendaftaran</h1>
-    Waktu saat ini : <span th:text="${waktu}">Coba</span>
-
-    <form method="post">
-        <div class="form-group">
-            <label for="inputNama">Nama Lengkap</label>
-            <input class="form-control is-invalid"
-                   id="inputNama"
-                   name="username"
-                   type="text">
-            <div class="invalid-feedback">
-                Nama harus diisi
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Email</label>
-            <input class="form-control" id="password"
-                   name="password"
-                   type="password">
-            <div class="invalid-feedback">
-                Format email salah
-            </div>
-        </div>
-
-        <button class="btn btn-primary" type="submit">Submit</button>
-    </form>
     <!-- /container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
