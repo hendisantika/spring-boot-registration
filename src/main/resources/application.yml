@@ -11,7 +11,8 @@ spring:
     prefix: file:./src/main/resources/templates/
     check-template: true
     suffix: .html
-    mode: LEGACYHTML5
+    mode: HTML
     encoding: UTF-8
-    content-type: text/html
+    servlet:
+      content-type: text/html
 
